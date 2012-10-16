@@ -1,5 +1,5 @@
 /*
- * jQuery Raptorize Plugin 1.0
+ * jQuery Raptorize Plugin 1.1
  * www.ZURB.com/playground
  * Copyright 2010, ZURB
  * Free to use under the MIT license.
