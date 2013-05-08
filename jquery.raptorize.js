@@ -24,10 +24,9 @@
 
       var _this = $(this);
       var audioSupported = false;
-      //Stupid Browser Checking which should be in jQuery Support
-      if ($.browser.mozilla && $.browser.version.substr(0, 5) >= "1.9.2" || $.browser.webkit) { 
-        audioSupported = true;
-      }
+
+      // Check audio support
+      audioSupported = !!document.createElement('audio').canPlayType;
       
       //Raptor Vars
       var raptorImageMarkup = '<img id="elRaptor" style="display: none" src="raptor.png" />'
