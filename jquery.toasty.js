@@ -59,12 +59,11 @@
                 
         // Movement Hilarity  
         DanForden.animate({
-		"left" : "-=695px"
-		}, "fast").delay(500).animate({
-		"left" : "+=695px"
-		}, "slow"
-		);
-		}
+	  "left" : "-=695px"
+	}, "fast").delay(500).animate({
+	  "left" : "+=695px"
+	}, "slow");
+      }
       
       //Determine Entrance
       if(options.enterOn == 'timer') {
