@@ -1,7 +1,9 @@
 /*
- * jQuery Raptorize Plugin 1.1
- * www.ZURB.com/playground
- * Copyright 2010, ZURB
+ * jQuery Toasty! Plugin 1.0
+ * https://github.com/joepurdy/jquery-toasty
+ * Copyright 2014, Joe Purdy
+ * Inspired by ZURB's jQuery Raptorize Plugin 1.0 (http://www.ZURB.com/playground)
+ * This is a redesigned version of their plugin in the style of Mortal Kombat's Toasty! easter egg
  * Free to use under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
 */
@@ -9,12 +11,12 @@
 
 (function($) {
 
-    $.fn.raptorize = function(options) {
+    $.fn.toasty = function(options) {
 
         //Yo' defaults
         var defaults = {  
             enterOn: 'click', //timer, konami-code, click
-            delayTime: 5000 //time before raptor attacks on timer mode
+            delayTime: 5000 //time before Dan attacks on timer mode
             };  
         
         //Extend those options
@@ -29,54 +31,40 @@
         audioSupported = true;
       }
       
-      //Raptor Vars
-      var raptorImageMarkup = '<img id="elRaptor" style="display: none" src="raptor.png" />'
-      var raptorAudioMarkup = '<audio id="elRaptorShriek" preload="auto"><source src="raptor-sound.mp3" /><source src="raptor-sound.ogg" /></audio>'; 
+      //Toasty Vars
+      var toastyImageMarkup = '<img id="elDan" style="display: none" src="toasty.png" />'
+      var toastyAudioMarkup = '<audio id="Toasty!" preload="auto"><source src="toasty-sound.mp3" /><source src="toasty-sound.ogg" /></audio>'; 
       var locked = false;
       
-      //Append Raptor and Style
-      $('body').append(raptorImageMarkup);
-      if(audioSupported) { $('body').append(raptorAudioMarkup); }
-      var raptor = $('#elRaptor').css({
+      //Append Toasty and Style
+      $('body').append(toastyImageMarkup);
+      if(audioSupported) { $('body').append(toastyAudioMarkup); }
+      var DanForden = $('#elDan').css({
         "position":"fixed",
-        "bottom": "-700px",
-        "right" : "0",
+        "bottom": "0",
+        "right" : "-700px",
         "display" : "block"
       })
       
       // Animating Code
       function init() {
-        locked = true;
       
         //Sound Hilarity
         if(audioSupported) { 
           function playSound() {
-            document.getElementById('elRaptorShriek').play();
+            document.getElementById('Toasty!').play();
           }
           playSound();
         }
                 
         // Movement Hilarity  
-        raptor.animate({
-          "bottom" : "0"
-        }, function() {       
-          $(this).animate({
-            "bottom" : "-130px"
-          }, 100, function() {
-            var offset = (($(this).position().left)+400);
-            $(this).delay(300).animate({
-              "right" : offset
-            }, 2200, function() {
-              raptor = $('#elRaptor').css({
-                "bottom": "-700px",
-                "right" : "0"
-              })
-              locked = false;
-            })
-          });
-        });
-      }
-      
+        DanForden.animate({
+		"left" : "-=695px"
+		}, "fast").delay(500).animate({
+		"left" : "+=695px"
+		}, "slow"
+		);
+		}
       
       //Determine Entrance
       if(options.enterOn == 'timer') {
