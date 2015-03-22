@@ -51,4 +51,4 @@ Toasty! can be activated on a click event, a timer which waits for a set time af
 **Technical Note:** The 'delayTime' : 2000 entry under the Timer version dictates how long the script waits in milliseconds after the page loads before activating the Toasty! plugin. The Konami Code version will only activate once per page load.
 
 ### Support or Contact
-Having trouble getting things set up? Shoot me an email at support@aperture.computer with the subject "Toasty! Help" and I'll do my best to point you in the right direction.
+Having trouble getting things set up? Shoot me an email at joe@poweredbypurdy.com with the subject "Toasty! Help" and I'll do my best to point you in the right direction.
