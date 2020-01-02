@@ -25,11 +25,6 @@
         return this.each(function() {
 
       var _this = $(this);
-      var audioSupported = false;
-      //Stupid Browser Checking which should be in jQuery Support
-      if ($.browser.mozilla && $.browser.version.substr(0, 5) >= "1.9.2" || $.browser.webkit) { 
-        audioSupported = true;
-      }
       
       //Toasty Vars
       var toastyImageMarkup = '<img id="elDan" style="display: none" src="toasty.png" />'
@@ -38,7 +33,7 @@
       
       //Append Toasty and Style
       $('body').append(toastyImageMarkup);
-      if(audioSupported) { $('body').append(toastyAudioMarkup); }
+      $('body').append(toastyAudioMarkup);
       var DanForden = $('#elDan').css({
         "position":"fixed",
         "bottom": "0",
@@ -50,12 +45,7 @@
       function init() {
       
         //Sound Hilarity
-        if(audioSupported) { 
-          function playSound() {
-            document.getElementById('Toasty!').play();
-          }
-          playSound();
-        }
+        document.getElementById('Toasty!').play();
                 
         // Movement Hilarity  
         DanForden.animate({
